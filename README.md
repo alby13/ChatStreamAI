@@ -1,4 +1,4 @@
-# ChatStream Browser ChatGPT o1 Text-Streaming Interface
+# ChatStreamAI Browser ChatGPTo1 Text-Streaming Interface
 This FastAPI application provides a real-time chat interface that allows users to interact with OpenAI's language models via WebSocket connections. The application supports session management, chat history storage, and streaming responses from the AI.
 
 ## Features
