@@ -1,4 +1,4 @@
-# ChatStreamAI
+# ChatStreamAI Web Browser OpenAI ChatGPT o1 Chat-Streaming Interface
 OpenAI ChatGPT o1-preview with Streaming via FastAPI
 
 
