@@ -1,7 +1,22 @@
 # ChatStreamAI Web Browser ChatGPT o1 Chat-Streaming Interface
-OpenAI ChatGPT o1-preview with Streaming via FastAPI
+This FastAPI application provides a real-time chat interface that allows users to interact with OpenAI's language models via WebSocket connections. The application supports session management, chat history storage, and streaming responses from the AI.
 
-## Explanation of imports:
+## Features
+
+- WebSocket Communication: Establishes a persistent connection for real-time message exchange between the client and the server.<br>
+- Session Management: Each chat session is uniquely identified by a session ID, allowing users to maintain separate conversations.<br>
+- Chat History: Stores chat messages in JSON format for each session, enabling users to retrieve past interactions.<br>
+- Dynamic System Prompts: Incorporates the current date and time into the system prompt for context-aware responses.<br>
+- Streaming Responses: Sends AI-generated responses in real-time, allowing for a more interactive user experience.<br>
+
+## Components
+
+- FastAPI: The web framework used to build the application.<br>
+- OpenAI API: Utilizes OpenAI's language models to generate responses based on user input.<br>
+- HTML/CSS Frontend: A simple web interface for users to send messages and view responses.<br>
+- WebSocket: Facilitates real-time communication between the client and server.<br>
+
+### Explanation of imports:
 
 1. import os<br>
 Purpose: The os module provides a way to interact with the operating system and access environment variables.
