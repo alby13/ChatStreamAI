@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Interface</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-left">
+                <button id="new-chat-btn" class="header-button" title="New Chat">
+                    <!-- Simple SVG for edit/new icon -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.5 6.5L17.5 10.5M4 20H8L18.5 9.5C19.0304 8.96957 19.3284 8.25022 19.3284 7.5C19.3284 6.74978 19.0304 6.03043 18.5 5.5C17.9696 4.96957 17.2502 4.67157 16.5 4.67157C15.7498 4.67157 15.0304 4.96957 14.5 5.5L4 16V20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <span class="header-title">GPT-4.1</span>
+                 <!-- Simple SVG for dropdown arrow -->
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="header-right">
+                 <button id="open-history-btn" class="header-button secondary" title="Show History Folder Path">
+                     <!-- Simple SVG for folder icon -->
+                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 7V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19H19C19.5304 19 20.0391 18.7893 20.4142 18.4142C20.7893 18.0391 21 17.5304 21 17V9C21 8.46957 20.7893 7.96086 20.4142 7.58579C20.0391 7.21071 19.5304 7 19 7H12L10 5H5C4.46957 5 3.96086 5.21071 3.58579 5.58579C3.21071 5.96086 3 6.46957 3 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                     </svg>
+                     History Path
+                 </button>
+                 <button id="save-chat-btn" class="header-button secondary" title="Save Current Chat" disabled>
+                     <!-- Save/Disk SVG -->
+                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                     Save Chat
+                 </button>
+                <button id="settings-btn" class="header-button secondary" title="Settings">SETTINGS</button>
+            </div>
+        </header>
+
+        <main class="chat-area">
+            <div id="initial-prompt" class="initial-prompt-container">
+                 <!-- Optional: Add a logo here -->
+                 <!-- <img src="/static/logo.png" alt="Logo" class="logo"> -->
+                <h2>What can I help with?</h2>
+            </div>
+            <div id="chat-container">
+                <!-- Messages will be appended here -->
+            </div>
+        </main>
+
+        <footer class="input-container">
+            <div class="input-wrapper">
+                <input type="text" id="message-input" placeholder="Ask anything..." disabled>
+                <button id="mic-button" class="icon-button" title="Voice input (not implemented)" disabled>
+                    <!-- Mic SVG -->
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3Z" fill="currentColor"/><path d="M19 10v2a7 7 0 1 1-14 0v-2h2v2a5 5 0 1 0 10 0v-2h2Z" fill="currentColor"/></svg>
+                </button>
+                <button id="send-button" class="icon-button send-button" title="Send message" disabled>
+                     <!-- Send SVG -->
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 14l11-11M21 3l-6.5 18-3.5-7-7-3.5L21 3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+            <div id="status" class="status-bar">Connecting...</div>
+             <button id="help-btn" class="help-button" title="Help (not implemented)">?</button>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

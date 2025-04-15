@@ -1,0 +1,382 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #ffffff; /* Pure white background */
+    color: #1f2328; /* Dark text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Prevent body scroll */
+}
+
+/* App Layout */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100vw; /* Full width */
+    height: 100vh;   /* Full height */
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    /* Remove border radius if you want edge-to-edge */
+    /* border-radius: 8px; */
+    overflow: hidden; /* Important to contain children */
+}
+
+/* Header Styles */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e0e0e0; /* Subtle border */
+    background-color: #ffffff;
+    flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-title {
+    font-weight: 500;
+    font-size: 1rem;
+    margin-left: 5px; /* Space after icon */
+    margin-right: 5px; /* Space before dropdown */
+}
+
+.header-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    transition: background-color 0.2s ease;
+}
+
+.header-button:hover:not(:disabled) {
+    background-color: #f0f0f0;
+}
+
+.header-button svg {
+     /* currentColor makes SVG use the button's text color */
+    stroke: currentColor;
+    fill: currentColor; /* For filled icons */
+}
+
+.header-button.secondary {
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 6px 12px;
+    color: #555;
+    border: 1px solid #ccc; /* Subtle border for secondary buttons */
+}
+.header-button.secondary:hover:not(:disabled) {
+    background-color: #e8e8e8;
+    border-color: #bbb;
+}
+.header-button.secondary svg {
+    margin-right: 5px; /* Space between icon and text */
+    fill: none; /* Ensure only stroke is used for outline icons */
+    stroke: currentColor;
+}
+
+
+/* Main Chat Area */
+.chat-area {
+    flex-grow: 1; /* Takes up remaining vertical space */
+    overflow-y: auto; /* Allows scrolling for messages */
+    padding: 20px 20px 0 20px; /* Padding top/sides, no bottom (handled by input) */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Initial Prompt Screen */
+.initial-prompt-container {
+    flex-grow: 1; /* Center vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center;
+    color: #555;
+    padding-bottom: 100px; /* Push it up a bit */
+}
+.initial-prompt-container h2 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin-top: 15px;
+}
+.logo {
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
+}
+
+
+#chat-container {
+    width: 100%;
+    max-width: 800px; /* Limit chat width */
+    margin: 0 auto; /* Center chat messages */
+    padding-bottom: 20px; /* Space at the very bottom */
+}
+
+/* Message Styling (similar to previous) */
+.message {
+    margin: 15px 0;
+    padding: 12px 15px;
+    border-radius: 18px; /* More rounded */
+    line-height: 1.5;
+    word-wrap: break-word;
+    max-width: 85%; /* Limit message width */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.user {
+    background: #e9f5ff;
+    margin-left: auto; /* Align user messages to the right */
+    border-bottom-right-radius: 5px; /* Slightly flatten corner */
+}
+
+.assistant {
+    background: #f8f9fa;
+    margin-right: auto; /* Align assistant messages to the left */
+    border-bottom-left-radius: 5px; /* Slightly flatten corner */
+    white-space: pre-wrap;
+}
+
+.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+    margin: 10px auto;
+    width: fit-content;
+    max-width: 90%;
+}
+
+
+/* Footer and Input Area */
+.input-container {
+    padding: 15px 20px 20px 20px; /* Add more bottom padding */
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    flex-shrink: 0; /* Prevent footer from shrinking */
+    position: relative; /* For positioning help button */
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px; /* Fully rounded ends */
+    padding: 5px 5px 5px 15px; /* Padding inside the wrapper */
+    max-width: 800px;
+    margin: 0 auto; /* Center input bar */
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+#message-input {
+    flex-grow: 1;
+    padding: 10px 5px; /* Vertical padding */
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: transparent; /* Inherit wrapper background */
+}
+
+#message-input:disabled {
+    background-color: transparent;
+    cursor: not-allowed;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    transition: background-color 0.2s ease;
+}
+
+.icon-button:hover:not(:disabled) {
+    background-color: #eee;
+}
+.icon-button:disabled {
+    color: #bbb;
+    cursor: not-allowed;
+}
+
+.icon-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.send-button svg {
+    fill: none; /* Use stroke for send icon */
+    stroke: currentColor;
+}
+
+.send-button:not(:disabled) {
+     /* Optional: different color when active */
+    /* color: #007bff; */
+}
+
+
+/* Status Bar */
+.status-bar {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Help Button */
+.help-button {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    background-color: #f0f0f0;
+    color: #555;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+.help-button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Hide initial prompt when chat has content */
+.chat-started .initial-prompt-container {
+    display: none;
+}
+
+/* --- Markdown Element Styling --- */
+
+/* Apply within assistant messages */
+.message.assistant p {
+    margin-bottom: 0.5em; /* Spacing between paragraphs */
+}
+.message.assistant p:last-child {
+    margin-bottom: 0;
+}
+
+.message.assistant h1,
+.message.assistant h2,
+.message.assistant h3,
+.message.assistant h4,
+.message.assistant h5,
+.message.assistant h6 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+}
+
+.message.assistant ul,
+.message.assistant ol {
+    margin-left: 1.5em; /* Indentation for lists */
+    margin-bottom: 0.8em;
+    padding-left: 1em; /* Ensure padding for bullets/numbers */
+}
+
+.message.assistant li {
+    margin-bottom: 0.3em;
+}
+
+.message.assistant blockquote {
+    border-left: 3px solid #ccc;
+    padding-left: 1em;
+    margin: 0.8em 0;
+    color: #555;
+    font-style: italic;
+}
+
+.message.assistant code {
+    background-color: #f0f0f0; /* Light background for inline code */
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 0.9em;
+}
+
+.message.assistant pre {
+    background-color: #f5f5f5; /* Slightly different background for code blocks */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1em;
+    margin: 0.8em 0;
+    overflow-x: auto; /* Allow horizontal scrolling for long lines */
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 0.9em;
+    white-space: pre; /* Keep whitespace formatting */
+}
+
+.message.assistant pre code {
+    background-color: transparent; /* Reset background for code inside pre */
+    padding: 0;
+    border: none;
+    white-space: pre-wrap; /* Allow wrapping within the pre block if needed */
+    word-wrap: break-word;
+}
+
+
+.message.assistant a {
+    color: #007bff;
+    text-decoration: none;
+}
+.message.assistant a:hover {
+    text-decoration: underline;
+}
+
+.message.assistant table {
+    border-collapse: collapse;
+    margin: 1em 0;
+    width: auto; /* Adjust as needed */
+    border: 1px solid #ccc;
+}
+
+.message.assistant th,
+.message.assistant td {
+    border: 1px solid #ccc;
+    padding: 0.5em 0.8em;
+    text-align: left;
+}
+
+.message.assistant th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.message.assistant hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 1.5em 0;
+}
