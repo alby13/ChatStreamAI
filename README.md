@@ -9,7 +9,11 @@
 5.  **Save Chat:** Click the "Save Chat" button (disk icon) in the header. This will create a timestamped copy of the *current* session's conversation history inside the `chat_history/saved_chats/` folder on the server.
 6.  **Settings:** The "SETTINGS" button is currently a placeholder.
 
-## Running the App from the ChatStreamAI.exe:
+<br>
+
+## Running the App as a Release (.exe version)
+
+Download Version 2 from the Releases on the right. Unzip the zip file somewhere where you can find it easily.
 
 1.  **Prepare the Distribution Folder:**
     *   **Edit the `.env` file** inside the directory is a plain text .env file that you need to change your API key on this line: `OPENAI_API_KEY=your_api_key_here`.
@@ -35,6 +39,13 @@
 
 *   **API Key Errors:** Ensure the `.env` file exists in the correct location (next to the `.exe` file) and contains the `OPENAI_API_KEY=...` line with a valid key. Check console logs for specific errors.
 *   **Permission Errors (Executable):** The app needs write permissions in its directory to create `chat_history`. Avoid running from protected locations like `C:\Program Files`.
+
+<br>
+
+## Running the App as a Python program:
+
+
+<br>
 
 ## License
 
