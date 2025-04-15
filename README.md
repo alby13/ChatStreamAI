@@ -13,6 +13,8 @@
 
 <br>
 
+
+# Update: The .exe release should be available tomorrow, 4-15-2025
 ## Running the App as a Release (.exe version)
 
 Download Version 2 from the Releases on the right. Unzip the zip file somewhere where you can find it easily.
@@ -46,6 +48,31 @@ Download Version 2 from the Releases on the right. Unzip the zip file somewhere 
 
 ## Running the App as a Python program:
 
+I have posted the main.py and requirements.txt for you to run the Python version.
+
+Requirements:
+```
+fastapi
+uvicorn[standard] # Includes websockets, httptools, etc.
+openai
+pydantic
+python-dotenv # Good practice for managing environment variables locally
+```
+
+Your project should have the <code>/static</code> folder with the html, javascript, and css files.
+
+You need to edit the <code>.env</code> file with a text editor and paste your OpenAI API key to run this.
+
+Run
+```
+python main.py
+```
+
+or
+
+```
+python3 main.py
+```
 
 <br>
 
