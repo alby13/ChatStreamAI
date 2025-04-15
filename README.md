@@ -7,7 +7,7 @@
 3.  **New Chat:** *NOTE* Not Working - Click the "New Chat" icon (pencil) in the top-left header to start a completely fresh session (clears the current view and gets a new session ID). *Note* Not Working
 4.  **History Path:** Click the "History Path" button in the header to see an alert displaying the absolute path on the *server* where the `chat_history` folder is located. Manually saved chats are within the `saved_chats` subfolder at that location.
 5.  **Save Chat:** Click the "Save Chat" button (disk icon) in the header. This will create a timestamped copy of the *current* session's conversation history inside the `chat_history/saved_chats/` folder on the server.
-6.  **Settings:** The "SETTINGS" button is currently a placeholder.
+6.  **Settings:** The "SETTINGS" button is currently a placeholder. This may be updated if there are settings for the GPT-4.1 model.
 
 <br>
 
