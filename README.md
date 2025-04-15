@@ -1,5 +1,7 @@
 ## GPT-4.1 ChatStreamAI Web Browser Text-Streaming Chatbot Interface
 
+<img src="https://github.com/alby13/ChatStreamAI/blob/main/gpt41-screenshot.jpg">
+
 ## Usage
 
 1.  **Start Chatting:** Type your message in the input box at the bottom and press Enter or click the Send button.
