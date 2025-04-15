@@ -1,6 +1,50 @@
 ## GPT-4.1 ChatStreamAI Web Browser Text-Streaming Chatbot Interface
 
+## Usage
 
+1.  **Start Chatting:** Type your message in the input box at the bottom and press Enter or click the Send button.
+2.  **Streaming Responses:** The assistant's response will stream in real-time. Markdown formatting will be applied once the full response is received.
+3.  **New Chat:** *NOTE* Not Working - Click the "New Chat" icon (pencil) in the top-left header to start a completely fresh session (clears the current view and gets a new session ID). *Note* Not Working
+4.  **History Path:** Click the "History Path" button in the header to see an alert displaying the absolute path on the *server* where the `chat_history` folder is located. Manually saved chats are within the `saved_chats` subfolder at that location.
+5.  **Save Chat:** Click the "Save Chat" button (disk icon) in the header. This will create a timestamped copy of the *current* session's conversation history inside the `chat_history/saved_chats/` folder on the server.
+6.  **Settings:** The "SETTINGS" button is currently a placeholder.
+
+## Running the App from the ChatStreamAI.exe:
+
+1.  **Prepare the Distribution Folder:**
+    *   **Edit the `.env` file** inside the directory is a plain text .env file that you need to change your API key on this line: `OPENAI_API_KEY=your_api_key_here`.
+
+    The final folder structure for distribution should look like:
+    ```
+    ChatApp/  (This is the folder you distribute)
+    ├── ChatStreamAI.exe
+    ├── ... (other DLLs and files)
+    │
+    ├── static/       <-- Contains index.html, style.css, script.js
+    │   ├── ...
+    │
+    └── .env          <-- Contains the API Key (user needs to add their key)
+    ```
+
+2.  **How to set up the app:**
+    *   Place the entire `ChatStreamAI` folder somewhere convenient (e.g., Desktop, Documents).
+    *   Edit the `.env` file within that folder and enter your own OpenAI API Key.
+    *   Run the application by double-clicking `ChatStreamAI.exe`.
+
+## Troubleshooting
+
+*   **API Key Errors:** Ensure the `.env` file exists in the correct location (next to the `.exe` file) and contains the `OPENAI_API_KEY=...` line with a valid key. Check console logs for specific errors.
+*   **Permission Errors (Executable):** The app needs write permissions in its directory to create `chat_history`. Avoid running from protected locations like `C:\Program Files`.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+<br>
+
+<br>
+
+<br>
 
 # Please Note: Everything below is for the old version for o1-preview, 2024
 
