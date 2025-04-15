@@ -1,6 +1,12 @@
+## GPT-4.1 ChatStreamAI Web Browser Text-Streaming Chatbot Interface
+
+
+
+# Please Note: Everything below is for the old version for o1-preview, 2024
+
 <img src="https://raw.githubusercontent.com/alby13/ChatStreamAI/refs/heads/main/screenshot.jpg">
 
-# ChatStreamAI Browser ChatGPT o1-preview Text-Streaming Interface
+## ChatStreamAI Browser ChatGPT o1-preview Text-Streaming Interface
 This FastAPI application provides a real-time chat interface that allows users to interact with OpenAI's language models in the web browser via WebSocket connections. The application supports session management, chat history storage, and streaming responses from the AI.
 
 ## Features
