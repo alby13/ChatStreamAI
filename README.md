@@ -74,6 +74,12 @@ or
 python3 main.py
 ```
 
+The server should start in less than a minute, then you can connect by opening a internet browser and navigating to http://127.0.0.1:8000
+
+<br>
+
+<br>
+
 <br>
 
 <br>
